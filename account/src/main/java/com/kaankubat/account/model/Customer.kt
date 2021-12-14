@@ -1,0 +1,22 @@
+package com.kaankubat.account.model
+
+import org.hibernate.annotations.GenericGenerator
+import javax.persistence.FetchType
+import javax.persistence.GeneratedValue
+import javax.persistence.Id
+import javax.persistence.OneToMany
+
+data class Customer(
+
+        @Id
+        @GeneratedValue(generator = "UUID")
+        @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUDGenerator")
+        val id: String?,
+
+        val name: String?,
+        val surname: String?,
+
+      /*  @OneToMany(mappedBy = "customer", fetch = FetchType.LAZY)
+        val account: Set<Account>?*/
+
+        )
